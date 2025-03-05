@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Media Template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .section-spacing { margin-bottom: 40px; }
+    .profile-img { width: 100px; height: 100px; object-fit: cover; }
+    .profile-info, .post-feed, .events-container, .list-container {
+      padding: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 20px;
+    }
+    .bio-textarea { width: 100%; height: 100px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; }
+    .profile-container { display: flex; align-items: center; margin-bottom: 20px; }
+    .profile-details { margin-left: 20px; }
+    .row { display: flex; gap: 30px; margin-bottom: 40px; }
+    .col { flex: 1; }
+    .list-item { display: flex; align-items: center; margin-bottom: 10px; }
+    .list-item img { width: 40px; height: 40px; margin-right: 15px; border-radius: 50%; }
+    .event-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+  </style>
+</head>
+<body class="w3-light-grey">
+
+  <!-- Navigation Bar -->
+  <div class="w3-bar w3-blue w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-home"></i> Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-envelope"></i> Message</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-play"></i> Video</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-bell"></i> Notifications</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-search"></i> Search</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-right"><i class="fa fa-gear"></i> Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="w3-padding-large" style="margin-top: 80px; max-width: 1200px; margin: 0 auto;">
+    
+    <div class="row">
+
+      <!-- Left Column (Profile Section) -->
+      <div class="col">
+        <section class="profile-info section-spacing">
+          <h3>My Profile</h3>
+          <div class="profile-container">
+            <img src="images/2.jpg" class="w3-circle profile-img" alt="Profile Image">
+            <div class="profile-details">
+              <p><strong>Wacky Ramayla</strong></p>
+              <p><i class="fa fa-location-arrow"></i> Kauswagan, CDOC</p>
+              <p><i class="fa fa-briefcase"></i> Student</p>
+            </div>
+          </div>
+          <textarea class="bio-textarea" placeholder="Write a short bio about yourself..."></textarea>
+          <button class="w3-button w3-blue w3-full">Edit Profile</button>
+        </section>
+
+        <!-- Groups Section -->
+        <section class="w3-card w3-round section-spacing">
+          <button onclick="toggleAccordion('groupsAccordion')" class="w3-button w3-block w3-blue"><i class="fa fa-users w3-margin-right"></i> My Groups</button>
+          <div id="groupsAccordion" class="w3-hide w3-padding">
+            <p>Group 1: BISAYA MEME REPUBLIC</p>
+            <p>Group 2: I miss you</p>
+          </div>
+        </section>
+
+        <!-- Friends, Following, Followers Sections -->
+        <section class="list-container section-spacing">
+          <h3>My Friends</h3>
+          <div class="list-item">
+            <img src="images/3.jpg" alt="Friend Avatar">
+            <p>Arze Acralap</p>
+          </div>
+          <div class="list-item">
+            <img src="images/10.jpg" alt="Friend Avatar">
+            <p>Coco Martin</p>
+          </div>
+          <div class="list-item">
+            <img src="images/4.jpg" alt="Friend Avatar">
+            <p>Francis M</p>
+          </div>
+        </section>
+
+        <section class="list-container section-spacing">
+          <h3>People You Follow</h3>
+          <div class="list-item">
+            <img src="images/5.webp" alt="Followed Avatar">
+            <p>Malupiton Official</p>
+          </div>
+          <div class="list-item">
+            <img src="images/6.jpg" alt="Followed Avatar">
+            <p>Team Itik</p>
+          </div>
+        </section>
+
+        <section class="list-container section-spacing">
+          <h3>People Following You</h3>
+          <div class="list-item">
+            <img src="images/7.webp" alt="Follower Avatar">
+            <p>Michael Jackson</p>
+          </div>
+          <div class="list-item">
+            <img src="images/8.webp" alt="Follower Avatar">
+            <p>Dingdong Dantes</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Middle Column (Post Feed) -->
+      <div class="col">
+        <section class="w3-card w3-white w3-round section-spacing">
+          <h3>What's on your mind?</h3>
+          <textarea class="w3-input w3-border" rows="4" placeholder="Write your status..."></textarea>
+          <button class="w3-button w3-blue w3-margin-top">Post</button>
+        </section>
+
+        <!-- Posts Feed -->
+        <section class="post-feed w3-card w3-white w3-round section-spacing">
+          <img src="images/3.jpg" class="w3-left w3-circle" style="width:50px;">
+          <span class="w3-right w3-opacity">1 min ago</span>
+          <h4>Arze Acralap</h4>
+          <p>nAgkaOn KaNA LAB??</p>
+          <button class="w3-button w3-blue w3-margin-top"><i class="fa fa-thumbs-up"></i> Like</button>
+          <button class="w3-button w3-grey w3-margin-top"><i class="fa fa-comment"></i> Comment</button>
+        </section>
+
+        <section class="post-feed w3-card w3-white w3-round section-spacing">
+          <img src="images/7.webp" class="w3-left w3-circle" style="width:50px;">
+          <span class="w3-right w3-opacity">5 min ago</span>
+          <h4>Michael Jackson</h4>
+          <p>Hee hee.</p>
+          <button class="w3-button w3-blue w3-margin-top"><i class="fa fa-thumbs-up"></i> Like</button>
+          <button class="w3-button w3-grey w3-margin-top"><i class="fa fa-comment"></i> Comment</button>
+        </section>
+
+        <section class="post-feed w3-card w3-white w3-round section-spacing">
+          <img src="images/4.jpg" class="w3-left w3-circle" style="width:50px;">
+          <span class="w3-right w3-opacity">5 min ago</span>
+          <h4>Francis M</h4>
+          <p>Every color every hue.</p>
+          <button class="w3-button w3-blue w3-margin-top"><i class="fa fa-thumbs-up"></i> Like</button>
+          <button class="w3-button w3-grey w3-margin-top"><i class="fa fa-comment"></i> Comment</button>
+        </section>
+
+        <section class="post-feed w3-card w3-white w3-round section-spacing">
+          <img src="images/5.webp" class="w3-left w3-circle" style="width:50px;">
+          <span class="w3-right w3-opacity">5 min ago</span>
+          <h4>Malupiton Official</h4>
+          <p>Kamusta ang buhay buhay?</p>
+          <button class="w3-button w3-blue w3-margin-top"><i class="fa fa-thumbs-up"></i> Like</button>
+          <button class="w3-button w3-grey w3-margin-top"><i class="fa fa-comment"></i> Comment</button>
+        </section>
+      </div>
+
+      <!-- Right Column (Upcoming Events Section) -->
+      <div class="col">
+        <section class="events-container section-spacing">
+          <h3>Upcoming Events</h3>
+          <div class="event-item">
+            <img src="images/3.jpg" alt="Event Image">
+            <h4>It's Arze Acralap's Birthday!</h4>
+            <p>Pakals later!</p>
+            <button class="w3-button w3-blue w3-block">More Info</button>
+          </div>
+          <div class="event-item">
+            <img src="images/9.jpeg" alt="Event Image">
+            <h4>Swimming sa iyang mga atik!</h4>
+            <p>Saturday, 9:00 AM</p>
+            <button class="w3-button w3-blue w3-block">More Info</button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </div> 
+
+  <script>
+    function toggleAccordion(id) {
+      document.getElementById(id).classList.toggle("w3-show");
+    }
+  </script>
+
+</body>
+</html>
+
